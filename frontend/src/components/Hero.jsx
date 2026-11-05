@@ -6,13 +6,13 @@ function Hero() {
         <p className="hero-label">PLATINUM CARS · SOLINGEN</p>
 
         <h1>
-          Ihr nächstes Auto
+          Dein nächstes Auto
           <br />
-          wartet auf Sie.
+          wartet auf dich.
         </h1>
 
         <p className="hero-description">
-          Entdecken Sie unsere Gebrauchtwagen und fragen Sie Ihren
+          Entdecke unsere Gebrauchtwagen und frage deinen
           Besichtigungstermin direkt online an.
         </p>
 

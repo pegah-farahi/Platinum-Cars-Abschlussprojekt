@@ -1,15 +1,11 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../../database.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
 try {
-    $database = new PDO(
-        getenv('PLATINUM_DB_DSN') ?: 'mysql:host=127.0.0.1;port=3306;dbname=platinum_cars;charset=utf8mb4',
-        getenv('PLATINUM_DB_USER') ?: 'root',
-        getenv('PLATINUM_DB_PASSWORD') ?: '',
-        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-    );
+    $database = connectDatabase();
 
     $rows = $database->query(
         "SELECT v.*, i.image_path

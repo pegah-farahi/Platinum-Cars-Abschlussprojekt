@@ -1,0 +1,119 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/../../database.php';
+
+date_default_timezone_set('Europe/Berlin');
+header('Content-Type: application/json; charset=utf-8');
+
+function respond(int $status, array $data): never
+{
+    http_response_code($status);
+    echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Allow: POST');
+    respond(405, ['error' => 'Bitte verwenden Sie das Anfrageformular.']);
+}
+
+if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 20000) {
+    respond(413, ['error' => 'Die Anfrage ist zu lang.']);
+}
+
+$limits = [
+    'vehicle_id' => 10,
+    'name' => 150,
+    'email' => 254,
+    'phone' => 40,
+    'preferred_date' => 10,
+    'preferred_time' => 5,
+    'message' => 4000,
+];
+
+$values = [];
+
+foreach ($limits as $field => $limit) {
+    $value = $_POST[$field] ?? '';
+
+    if (
+        !is_string($value)
+        || !mb_check_encoding($value, 'UTF-8')
+        || mb_strlen($value, 'UTF-8') > $limit
+    ) {
+        respond(422, ['error' => 'Bitte prüfen Sie Ihre Eingaben.']);
+    }
+
+    $values[$field] = trim($value);
+}
+
+$vehicleId = filter_var(
+    $values['vehicle_id'],
+    FILTER_VALIDATE_INT,
+    ['options' => ['min_range' => 1]]
+);
+
+if (
+    $vehicleId === false
+    || $values['name'] === ''
+    || !filter_var($values['email'], FILTER_VALIDATE_EMAIL)
+) {
+    respond(422, ['error' => 'Bitte prüfen Sie Fahrzeug, Name und E-Mail.']);
+}
+
+$date = DateTimeImmutable::createFromFormat(
+    '!Y-m-d',
+    $values['preferred_date']
+);
+
+if (
+    !$date
+    || $date->format('Y-m-d') !== $values['preferred_date']
+    || $date < new DateTimeImmutable('today')
+) {
+    respond(422, ['error' => 'Bitte wählen Sie ein gültiges Datum ab heute.']);
+}
+
+$time = $values['preferred_time'];
+
+if ($time !== '' && !preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $time)) {
+    respond(422, ['error' => 'Bitte prüfen Sie die Uhrzeit.']);
+}
+
+try {
+    $database = connectDatabase();
+
+    $statement = $database->prepare(
+        "INSERT INTO appointment_requests
+            (vehicle_id, name, email, phone, preferred_date, preferred_time, message)
+         SELECT id, :name, :email, :phone, :preferred_date, :preferred_time, :message
+         FROM vehicles
+         WHERE id = :vehicle_id AND status = 'available'"
+    );
+
+    $statement->execute([
+        'vehicle_id' => $vehicleId,
+        'name' => $values['name'],
+        'email' => $values['email'],
+        'phone' => $values['phone'] === '' ? null : $values['phone'],
+        'preferred_date' => $values['preferred_date'],
+        'preferred_time' => $time === '' ? null : $time,
+        'message' => $values['message'] === '' ? null : $values['message'],
+    ]);
+
+    if ($statement->rowCount() === 0) {
+        respond(409, ['error' => 'Dieses Fahrzeug ist nicht mehr verfügbar.']);
+    }
+
+    respond(201, [
+        'id' => (int) $database->lastInsertId(),
+        'message' => 'Ihre Anfrage wurde gespeichert. Der Termin wird nach unserer Bestätigung verbindlich.',
+    ]);
+} catch (PDOException $error) {
+    error_log($error->getMessage());
+
+    respond(500, [
+        'error' => 'Die Anfrage konnte nicht gespeichert werden. Bitte kontaktieren Sie uns telefonisch.',
+    ]);
+}

@@ -1,6 +1,7 @@
 import "./VehicleCard.css";
 import { useRef, useState } from "react";
 import DealerContact from "./DealerContact";
+import AppointmentForm from './AppointmentForm'
 
 const audiA5FinancingUrl = "https://www.mobile.de/finanzierung/route/outlink/1?adId=53191191733536&channel=desktop&downPayment=2698&loanDuration=60&loanType=BALLOON&meta=loid%3A87fc3da4-d859-11f1-92be-95f7998002cf&placement=dhp-vip-price-link&lang=de&abtest=cos-dhp-aa%3Acontrol&abtest=cos-qct-dhp-contact%3Av1";
 
@@ -210,6 +211,7 @@ function VehicleCard({
                 Kontakt zu uns:
               </h2>
               <DealerContact compact />
+              <AppointmentForm vehicleId={id} vehicleTitle={title} />
             </div>
           </div>
         </div>

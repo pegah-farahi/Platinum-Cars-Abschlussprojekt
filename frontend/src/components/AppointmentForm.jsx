@@ -43,7 +43,7 @@ function AppointmentForm({ vehicleId, vehicleTitle }) {
         success: false,
         text:
           error instanceof SyntaxError
-            ? "Der Server ist derzeit nicht erreichbar. Bitte kontaktieren Sie uns."
+            ? "Der Server ist derzeit nicht erreichbar. Kontakt ist telefonisch oder per E-Mail möglich."
             : error.message,
       });
     } finally {
@@ -54,7 +54,7 @@ function AppointmentForm({ vehicleId, vehicleTitle }) {
     <details className="appointment-panel">
       <summary>Besichtigung anfragen</summary>
 
-      <p>Ihre Anfrage für: {vehicleTitle}</p>
+      <p>Besichtigungsanfrage für: {vehicleTitle}</p>
 
       <form className="appointment-form" onSubmit={submitAppointment}>
         <input type="hidden" name="vehicle_id" value={vehicleId} />
@@ -96,7 +96,7 @@ function AppointmentForm({ vehicleId, vehicleTitle }) {
         </label>
 
         <p>
-          * Pflichtfelder. Ihr Wunschtermin wird erst nach unserer Bestätigung
+          * Pflichtfelder. Der Wunschtermin wird erst nach unserer Bestätigung
           verbindlich.
         </p>
 

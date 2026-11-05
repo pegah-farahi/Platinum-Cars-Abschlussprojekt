@@ -10,7 +10,7 @@ export default function Shop() {
   return (
     <section className="vehicles-section" aria-labelledby="shop-heading">
       <h1 id="shop-heading">Autozubehör</h1>
-      <p>Hier sehen Sie Beispielprodukte mit Beispielpreisen und illustrativen Produktbildern. Die Online-Bestellung ist für später geplant.</p>
+      <p>Beispielprodukte mit Beispielpreisen und illustrativen Produktbildern. Die Online-Bestellung ist für später geplant.</p>
       <div className="vehicle-grid">
         {products.map(({ name, description, price, imagePosition }) => (
           <article className="shop-product" key={name}>

@@ -32,7 +32,7 @@ export default function Workshop() {
         success: false,
         text:
           error instanceof SyntaxError
-            ? "Der Server ist derzeit nicht erreichbar. Bitte versuchen Sie es später erneut."
+            ? "Der Server ist derzeit nicht erreichbar. Bitte später erneut versuchen."
             : error.message,
       });
     } finally {
@@ -46,19 +46,19 @@ export default function Workshop() {
         <div>
           <h1>Fahrzeugaufbereitung &amp; Reparatur</h1>
           <p>
-            Gemeinsam mit unserem Partner unterstützen wir Sie bei der Pflege,
-            Aufbereitung und Reparatur Ihres Fahrzeugs.
+            Gemeinsam mit unserem Partner bieten wir Unterstützung bei der Pflege,
+            Aufbereitung und Reparatur von Fahrzeugen.
           </p>
-          <h2>Ihr Anliegen im Mittelpunkt</h2>
+          <h2>Persönlicher Service fürs Fahrzeug</h2>
           <p>
-            Beschreiben Sie uns, was an Ihrem Fahrzeug gemacht werden soll. Wir
-            klären mit Ihnen den möglichen Leistungsumfang und die nächsten
-            Schritte.
+            Was soll am Fahrzeug gemacht werden? Nach einer kurzen Beschreibung
+            klären wir den möglichen Leistungsumfang und die nächsten Schritte
+            im persönlichen Gespräch.
           </p>
           <p>
             Ein Kostenvoranschlag und die Terminabstimmung erfolgen nach
-            persönlicher Rücksprache. Teilen Sie uns dafür bitte Fahrzeugmodell
-            und Ihr Anliegen mit.
+            persönlicher Rücksprache. Fahrzeugmodell und eine Beschreibung des
+            Anliegens helfen bei der Vorbereitung.
           </p>
           <DealerContact />
         </div>
@@ -70,7 +70,7 @@ export default function Workshop() {
         className="workshop-request"
         aria-labelledby="service-request-title"
       >
-        <h2 id="service-request-title">Ihre Anfrage an uns</h2>
+        <h2 id="service-request-title">Kontakt &amp; Terminanfrage</h2>
         <form className="request-form" onSubmit={submitRequest}>
           <fieldset disabled={sending}>
             <label>
@@ -108,7 +108,7 @@ export default function Workshop() {
               />
             </label>
             <label>
-              Ihr Fahrzeug:
+              Fahrzeug:
               <input
                 name="vehicle_description"
                 placeholder="Marke und Modell"
@@ -129,7 +129,7 @@ export default function Workshop() {
               <input name="preferred_time" type="time" />
             </label>
             <label className="request-message">
-              Ihr Anliegen: *
+              Anliegen: *
               <textarea name="message" maxLength={4000} rows={5} required />
             </label>
             <p className="request-message">

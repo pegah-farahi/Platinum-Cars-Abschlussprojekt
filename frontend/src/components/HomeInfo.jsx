@@ -23,7 +23,7 @@ export default function HomeInfo() {
             </svg>
             <h3>Autozubehör</h3>
             </div>
-            <p>Entdecken Sie eine Vorschau auf unseren geplanten Zubehörshop.</p>
+            <p>Eine Vorschau auf unseren geplanten Zubehörshop.</p>
             <a className="info-link" href="/shop">Shop-Vorschau ansehen →</a>
           </div>
         </div>

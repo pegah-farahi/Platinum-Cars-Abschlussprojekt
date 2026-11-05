@@ -251,17 +251,17 @@ function VehicleCard({
                 <li key={item}><span aria-hidden="true">✓</span>{item}</li>
               ))}
             </ul>
-          ) : <p>Details zur Ausstattung erhalten Sie beim Händler.</p>}
+          ) : <p>Details zur Ausstattung gibt es auf Anfrage bei uns.</p>}
         </section>
 
         <section>
           <h2>Fahrzeugbeschreibung</h2>
-          <p>{description || "Weitere Informationen zum Fahrzeug erhalten Sie beim Händler."}</p>
+          <p>{description || "Weitere Informationen zum Fahrzeug gibt es auf Anfrage bei uns."}</p>
         </section>
 
         <section id="fahrzeug-finanzierung">
           <h2>Finanzierung</h2>
-          <p>Fragen Sie beim Händler nach Finanzierungsmöglichkeiten und aktuellen Konditionen für dieses Fahrzeug.</p>
+          <p>Informationen zu Finanzierungsmöglichkeiten und aktuellen Konditionen für dieses Fahrzeug gibt es auf Anfrage bei uns.</p>
           <a className="info-link" href="#fahrzeug-kontakt">Kontakt zu uns</a>
           {financingExample && (
             <>

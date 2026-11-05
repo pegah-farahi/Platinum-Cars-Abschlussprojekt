@@ -16,7 +16,7 @@ function respond(int $status, array $data): never
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Allow: POST');
-    respond(405, ['error' => 'Bitte verwenden Sie das Anfrageformular.']);
+    respond(405, ['error' => 'Bitte das Anfrageformular verwenden.']);
 }
 
 if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 20000) {
@@ -43,7 +43,7 @@ foreach ($limits as $field => $limit) {
         || !mb_check_encoding($value, 'UTF-8')
         || mb_strlen($value, 'UTF-8') > $limit
     ) {
-        respond(422, ['error' => 'Bitte prüfen Sie Ihre Eingaben.']);
+        respond(422, ['error' => 'Bitte die Eingaben prüfen.']);
     }
 
     $values[$field] = trim($value);
@@ -60,7 +60,7 @@ if (
     || $values['name'] === ''
     || !filter_var($values['email'], FILTER_VALIDATE_EMAIL)
 ) {
-    respond(422, ['error' => 'Bitte prüfen Sie Fahrzeug, Name und E-Mail.']);
+    respond(422, ['error' => 'Bitte Fahrzeug, Name und E-Mail prüfen.']);
 }
 
 $date = DateTimeImmutable::createFromFormat(
@@ -73,13 +73,13 @@ if (
     || $date->format('Y-m-d') !== $values['preferred_date']
     || $date < new DateTimeImmutable('today')
 ) {
-    respond(422, ['error' => 'Bitte wählen Sie ein gültiges Datum ab heute.']);
+    respond(422, ['error' => 'Bitte ein gültiges Datum ab heute wählen.']);
 }
 
 $time = $values['preferred_time'];
 
 if ($time !== '' && !preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $time)) {
-    respond(422, ['error' => 'Bitte prüfen Sie die Uhrzeit.']);
+    respond(422, ['error' => 'Bitte die Uhrzeit prüfen.']);
 }
 
 try {
@@ -127,7 +127,7 @@ if ($existingRequest) {
 
     respond(200, [
         'id' => (int) $existingRequest['id'],
-        'message' => 'Diese Anfrage wurde bereits gespeichert. Wir melden uns bei Ihnen.',
+        'message' => 'Diese Anfrage wurde bereits gespeichert. Wir melden uns per E-Mail oder Telefon.',
     ]);
 }
 
@@ -157,7 +157,7 @@ if ($existingRequest) {
   $requestId = (int) $database->lastInsertId();
   $database->commit();
 
-$responseMessage = 'Ihre Anfrage wurde gespeichert. Der Termin wird nach unserer Bestätigung verbindlich.';
+$responseMessage = 'Die Anfrage wurde gespeichert. Der Termin wird nach unserer Bestätigung verbindlich.';
 
 $emailBody = implode(PHP_EOL, [
     'Neue Besichtigungsanfrage',
@@ -198,6 +198,6 @@ respond(201, [
     error_log($error->getMessage());
 
     respond(500, [
-        'error' => 'Die Anfrage konnte nicht gespeichert werden. Bitte kontaktieren Sie uns telefonisch.',
+        'error' => 'Die Anfrage konnte nicht gespeichert werden. Kontakt ist telefonisch möglich.',
     ]);
 }

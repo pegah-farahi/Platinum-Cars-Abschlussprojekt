@@ -72,7 +72,7 @@ function App() {
           ) : (
             <>
               <h2 id="vehicles-heading">Unsere Fahrzeuge</h2>
-              <p>Entdecken Sie eine Auswahl unserer Fahrzeuge.</p>
+              <p>Eine Auswahl unserer Fahrzeuge im Überblick.</p>
             </>
           )}
 

@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../database.php';
+require_once __DIR__ . '/../../mailer.php';
 
 date_default_timezone_set('Europe/Berlin');
 header('Content-Type: application/json; charset=utf-8');
@@ -83,6 +84,52 @@ if ($time !== '' && !preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $time)) {
 
 try {
     $database = connectDatabase();
+    $database->beginTransaction();
+    $vehicleQuery = $database->prepare(
+    "SELECT brand, model
+     FROM vehicles
+     WHERE id = :id AND status = 'available'
+     FOR UPDATE"
+);
+
+$vehicleQuery->execute(['id' => $vehicleId]);
+$vehicle = $vehicleQuery->fetch(PDO::FETCH_ASSOC);
+
+if (!$vehicle) {
+    $database->rollBack();
+    respond(409, ['error' => 'Dieses Fahrzeug ist nicht mehr verfügbar.']);
+}
+
+$vehicleTitle = $vehicle['brand'] . ' ' . $vehicle['model'];
+$duplicateQuery = $database->prepare(
+    "SELECT id
+     FROM appointment_requests
+     WHERE vehicle_id = :vehicle_id
+       AND email = :email
+       AND preferred_date = :preferred_date
+       AND preferred_time <=> CAST(:preferred_time AS TIME)
+       AND status IN ('new', 'confirmed')
+     LIMIT 1
+     FOR UPDATE"
+);
+
+$duplicateQuery->execute([
+    'vehicle_id' => $vehicleId,
+    'email' => $values['email'],
+    'preferred_date' => $values['preferred_date'],
+    'preferred_time' => $time === '' ? null : $time,
+]);
+
+$existingRequest = $duplicateQuery->fetch(PDO::FETCH_ASSOC);
+
+if ($existingRequest) {
+    $database->rollBack();
+
+    respond(200, [
+        'id' => (int) $existingRequest['id'],
+        'message' => 'Diese Anfrage wurde bereits gespeichert. Wir melden uns bei Ihnen.',
+    ]);
+}
 
     $statement = $database->prepare(
         "INSERT INTO appointment_requests
@@ -103,14 +150,51 @@ try {
     ]);
 
     if ($statement->rowCount() === 0) {
+        $database->rollBack();
         respond(409, ['error' => 'Dieses Fahrzeug ist nicht mehr verfügbar.']);
     }
 
-    respond(201, [
-        'id' => (int) $database->lastInsertId(),
-        'message' => 'Ihre Anfrage wurde gespeichert. Der Termin wird nach unserer Bestätigung verbindlich.',
-    ]);
+  $requestId = (int) $database->lastInsertId();
+  $database->commit();
+
+$responseMessage = 'Ihre Anfrage wurde gespeichert. Der Termin wird nach unserer Bestätigung verbindlich.';
+
+$emailBody = implode(PHP_EOL, [
+    'Neue Besichtigungsanfrage',
+    '',
+    'Anfrage-Nr.: ' . $requestId,
+    'Fahrzeug: ' . $vehicleTitle,
+    'Fahrzeug-ID: ' . $vehicleId,
+    'Name: ' . $values['name'],
+    'E-Mail: ' . $values['email'],
+    'Telefon: ' . ($values['phone'] ?: 'Nicht angegeben'),
+    'Wunschdatum: ' . $values['preferred_date'],
+    'Wunschzeit: ' . ($time ?: 'Nicht angegeben'),
+    '',
+    'Nachricht:',
+    $values['message'] ?: 'Keine Nachricht',
+]);
+
+try {
+    sendProjectEmail(
+        'Platinum Cars – Besichtigungsanfrage #' . $requestId,
+        $emailBody
+    );
+} catch (Throwable $mailError) {
+    error_log('E-Mail-Versand fehlgeschlagen für Anfrage #' . $requestId);
+
+    $responseMessage .= ' Die E-Mail-Benachrichtigung konnte nicht gesendet werden.';
+}
+
+respond(201, [
+    'id' => $requestId,
+    'message' => $responseMessage,
+]);
+
 } catch (PDOException $error) {
+    if (isset($database) && $database->inTransaction()) {
+    $database->rollBack();
+}
     error_log($error->getMessage());
 
     respond(500, [

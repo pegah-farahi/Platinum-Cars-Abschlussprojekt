@@ -1,0 +1,236 @@
+.vehicles-section {
+  padding: 60px 6%;
+}
+
+.vehicles-section h2 {
+  margin: 0 0 28px;
+  font-size: 32px;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.vehicle-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #f3f5f7;
+}
+
+.vehicle-filters label {
+  display: grid;
+  gap: 6px;
+  flex: 1 1 175px;
+  font-weight: 700;
+}
+
+.vehicle-filters input,
+.vehicle-filters select,
+.vehicle-filters button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #aebbc4;
+  border-radius: 5px;
+  background: #fff;
+  color: #04121c;
+  font: inherit;
+}
+
+.vehicle-filters input,
+.vehicle-filters select {
+  width: 100%;
+}
+
+.vehicle-filters button {
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicles-section {
+    padding: 40px 6%;
+  }
+}
+
+#leistungen {
+  background-color: #f3f5f7;
+}
+
+.dealer-contact {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 24px 6%;
+  background-color: #04121c;
+  color: #ffffff;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer-note {
+  color: #bdcbd4;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 32px;
+}
+
+.info-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #005b73;
+  font-weight: 700;
+}
+
+.workshop-photo {
+  margin: 0;
+}
+
+.workshop-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 80%;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(4, 18, 28, 0.16);
+}
+
+.shop-teaser {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #e3e8eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.shop-teaser-icon {
+  display: block;
+  padding: 9px;
+  border-radius: 10px;
+  background-color: #04121c;
+  color: #00bfe8;
+}
+
+.icon-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-heading h3 {
+  margin: 0;
+}
+
+.icon-heading svg {
+  flex-shrink: 0;
+  color: #007c98;
+}
+
+.icon-heading .shop-teaser-icon {
+  color: #00bfe8;
+}
+
+.workshop-request {
+  margin-top: 40px;
+}
+
+.request-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.request-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #aebbc4;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.request-message {
+  grid-column: 1 / -1;
+}
+
+.request-form button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .request-form fieldset {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-map {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 8px;
+  background: #f3f5f7;
+}
+
+.shop-product {
+  padding: 24px;
+  border: 1px solid #e3e8eb;
+  border-radius: 8px;
+}
+
+.shop-product h2 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.shop-product-image {
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 700px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

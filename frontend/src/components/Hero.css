@@ -1,0 +1,70 @@
+.site-hero {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding: 70px 6%;
+  color: #ffffff;
+  background-color: #04121c;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(4, 18, 28, 0.92),
+      rgba(4, 18, 28, 0.25)
+    ),
+    url('../assets/showroom-hero.webp');
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 580px;
+}
+
+.hero-label {
+  margin: 0 0 20px;
+  color: #00bfe8;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.hero-content h1 {
+  margin: 0 0 24px;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+}
+
+.hero-description {
+  max-width: 430px;
+  margin: 0 0 32px;
+  color: #e1e8eb;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 15px 24px;
+  border-radius: 4px;
+  background-color: #00bfe8;
+  color: #04121c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-button:hover {
+  background-color: #64d9f2;
+}
+
+@media (max-width: 600px) {
+  .site-hero {
+    min-height: 500px;
+    padding: 50px 6%;
+    background-position: 60% center;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+}

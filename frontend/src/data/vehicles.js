@@ -1,0 +1,32 @@
+export const vehicles = [
+  {
+    id: 1,
+    title: 'Audi A3 Sportback',
+    images: ['/images/vehicles/audi-a3/01.webp'],
+    firstRegistration: '09/2013',
+    mileage: '43.900',
+    fuel: 'Benzin',
+    power: '90 kW (122 PS)',
+    price: '12.900',
+  },
+  {
+    id: 2,
+    title: 'Mercedes-Benz CLA 180',
+    images: ['/images/vehicles/mercedes-cla/01.webp'],
+    firstRegistration: '08/2013',
+    mileage: '150.000',
+    fuel: 'Benzin',
+    power: '90 kW (122 PS)',
+    price: '11.900',
+  },
+  {
+    id: 3,
+    title: 'Ford Focus Trend',
+    images: ['/images/vehicles/ford-focus/01.webp'],
+    firstRegistration: '07/2018',
+    mileage: '44.000',
+    fuel: 'Benzin',
+    power: '74 kW (101 PS)',
+    price: '9.800',
+  },
+]

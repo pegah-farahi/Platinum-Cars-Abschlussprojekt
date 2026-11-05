@@ -1,0 +1,110 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 6%;
+  background-color: #04121c;
+}
+
+.site-brand {
+  color: #00bfe8;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #00bfe8;
+}
+
+.site-brand img {
+  width: 130px;
+  height: auto;
+}
+
+.services-menu {
+  position: relative;
+  color: #fff;
+}
+
+.services-menu summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+}
+
+.services-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.services-menu summary::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -4px;
+  height: 2px;
+  background-color: #00bfe8;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.services-menu:hover summary::after,
+.services-menu[open] summary::after,
+.services-menu summary:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-menu summary::after {
+    transition: none;
+  }
+}
+
+.services-menu-links {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(230px, 85vw);
+  display: grid;
+  padding: 6px;
+  border: 1px solid #344b59;
+  border-radius: 8px;
+  background: #04121c;
+}
+
+.services-menu-links a {
+  padding: 10px 12px;
+}
+
+/* Keep the pointer inside the menu while crossing the gap. */
+.services-menu-links::before {
+  content: "";
+  position: absolute;
+  inset: -12px 0 auto;
+  height: 12px;
+}
+
+@media (max-width: 600px) {
+  .services-menu-links {
+    position: static;
+    margin-top: 8px;
+  }
+
+  .services-menu-links::before {
+    display: none;
+  }
+}

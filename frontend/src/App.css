@@ -208,6 +208,12 @@
   cursor: pointer;
 }
 
+.request-form fieldset:disabled button {
+  background-color: #dce5e9;
+  color: #52616d;
+  cursor: not-allowed;
+}
+
 @media (max-width: 600px) {
   .request-form fieldset {
     grid-template-columns: 1fr;

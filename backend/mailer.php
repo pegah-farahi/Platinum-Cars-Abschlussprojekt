@@ -21,6 +21,7 @@ function sendProjectEmail(string $subject, string $body): void
 
     $mail->CharSet = 'UTF-8';
     $mail->Timeout = 20;
+    $mail->getSMTPInstance()->Timelimit = 20;
 
     $mail->setFrom(
         $config['mail_from'],

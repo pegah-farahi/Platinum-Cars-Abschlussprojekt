@@ -11,6 +11,7 @@ export default function Workshop() {
 
   async function submitRequest(event) {
     event.preventDefault();
+    if (sending || result?.success) return;
     const form = event.currentTarget;
     setSending(true);
     setResult(null);
@@ -25,8 +26,6 @@ export default function Workshop() {
           data.error || "Die Anfrage konnte nicht gespeichert werden.",
         );
       setResult({ success: true, text: data.message });
-      form.reset();
-      setRequestType("contact");
     } catch (error) {
       setResult({
         success: false,
@@ -72,7 +71,7 @@ export default function Workshop() {
       >
         <h2 id="service-request-title">Kontakt &amp; Terminanfrage</h2>
         <form className="request-form" onSubmit={submitRequest}>
-          <fieldset disabled={sending}>
+          <fieldset disabled={sending || result?.success}>
             <label>
               Anfrageart:
               <select
@@ -139,7 +138,9 @@ export default function Workshop() {
             <button className="hero-button" type="submit">
               {sending
                 ? "Wird gesendet …"
-                : requestType === "appointment"
+                : result?.success
+                  ? "Anfrage gespeichert ✓"
+                  : requestType === "appointment"
                   ? "Termin anfragen"
                   : "Nachricht senden"}
             </button>

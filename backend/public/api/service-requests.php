@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../../database.php';
+require_once __DIR__ . '/../../mailer.php';
 date_default_timezone_set('Europe/Berlin');
 header('Content-Type: application/json; charset=utf-8');
 
@@ -22,7 +24,7 @@ $limits = ['request_type' => 20, 'name' => 150, 'email' => 254, 'phone' => 40,
     'vehicle_description' => 200, 'preferred_date' => 10, 'preferred_time' => 5, 'message' => 4000];
 foreach ($limits as $field => $limit) {
     $value = $_POST[$field] ?? '';
-    if (!is_string($value) || strlen($value) > $limit * 4) {
+    if (!is_string($value) || !mb_check_encoding($value, 'UTF-8') || strlen($value) > $limit * 4) {
         respond(422, ['error' => 'Bitte die Eingaben prüfen.']);
     }
     $values[$field] = trim($value);
@@ -50,23 +52,83 @@ if ($time !== '' && ($date === '' || !preg_match('/^(?:[01]\d|2[0-3]):[0-5]\d$/'
     respond(422, ['error' => 'Bitte Datum und Uhrzeit prüfen.']);
 }
 try {
-    $database = new PDO(
-        getenv('PLATINUM_DB_DSN') ?: 'mysql:host=127.0.0.1;port=3306;dbname=platinum_cars;charset=utf8mb4',
-        getenv('PLATINUM_DB_USER') ?: 'root',
-        getenv('PLATINUM_DB_PASSWORD') ?: '',
-        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    $database = connectDatabase();
+    foreach (['phone', 'vehicle_description', 'preferred_date', 'preferred_time'] as $optional) {
+        if ($values[$optional] === '') $values[$optional] = null;
+    }
+
+    // Serialize requests from the same email, including simultaneous submissions.
+    $lockName = hash('sha256', 'platinum-service-' . strtolower($values['email']));
+    $lockQuery = $database->prepare('SELECT GET_LOCK(:lock_name, 5)');
+    $lockQuery->execute(['lock_name' => $lockName]);
+    if ((int) $lockQuery->fetchColumn() !== 1) {
+        respond(503, ['error' => 'Eine Anfrage wird noch verarbeitet. Bitte kurz warten und erneut versuchen.']);
+    }
+
+    $duplicateQuery = $database->prepare(
+        "SELECT id FROM service_requests
+         WHERE request_type = :request_type AND email = :email
+           AND vehicle_description <=> :vehicle_description
+           AND preferred_date <=> CAST(:preferred_date AS DATE)
+           AND preferred_time <=> CAST(:preferred_time AS TIME)
+           AND status IN ('new', 'confirmed')
+           AND (:type_check = 'appointment' OR message = :message)
+         LIMIT 1"
     );
+    $duplicateQuery->execute([
+        'request_type' => $values['request_type'],
+        'email' => $values['email'],
+        'vehicle_description' => $values['vehicle_description'],
+        'preferred_date' => $values['preferred_date'],
+        'preferred_time' => $values['preferred_time'],
+        'type_check' => $values['request_type'],
+        'message' => $values['message'],
+    ]);
+    $existingId = $duplicateQuery->fetchColumn();
+    if ($existingId !== false) {
+        $release = $database->prepare('SELECT RELEASE_LOCK(:lock_name)');
+        $release->execute(['lock_name' => $lockName]);
+        respond(200, ['id' => (int) $existingId, 'message' => 'Diese Anfrage wurde bereits gespeichert. Wir melden uns per E-Mail oder Telefon.']);
+    }
     $statement = $database->prepare(
         'INSERT INTO service_requests
          (request_type, name, email, phone, vehicle_description, preferred_date, preferred_time, message)
          VALUES (:request_type, :name, :email, :phone, :vehicle_description, :preferred_date, :preferred_time, :message)'
     );
-    foreach (['phone', 'vehicle_description', 'preferred_date', 'preferred_time'] as $optional) {
-        if ($values[$optional] === '') $values[$optional] = null;
-    }
     $statement->execute($values);
-    respond(201, ['id' => (int) $database->lastInsertId(), 'message' => 'Die Anfrage wurde gespeichert. Ein Termin wird erst nach unserer Bestätigung verbindlich.']);
+    $requestId = (int) $database->lastInsertId();
+    $release = $database->prepare('SELECT RELEASE_LOCK(:lock_name)');
+    $release->execute(['lock_name' => $lockName]);
+
+    $responseMessage = 'Die Anfrage wurde gespeichert.';
+    if ($values['request_type'] === 'appointment') {
+        $responseMessage .= ' Ein Termin wird erst nach unserer Bestätigung verbindlich.';
+    }
+    $requestLabel = $values['request_type'] === 'appointment' ? 'Werkstatt-Terminanfrage' : 'Werkstatt-Kontaktanfrage';
+    $body = implode(PHP_EOL, [
+        $requestLabel,
+        '',
+        'Anfrage-Nr.: ' . $requestId,
+        'Name: ' . $values['name'],
+        'E-Mail: ' . $values['email'],
+        'Telefon: ' . ($values['phone'] ?? 'Nicht angegeben'),
+        'Fahrzeug: ' . ($values['vehicle_description'] ?? 'Nicht angegeben'),
+        'Wunschdatum: ' . ($values['preferred_date'] ?? 'Nicht angegeben'),
+        'Wunschzeit: ' . ($values['preferred_time'] ?? 'Nicht angegeben'),
+        '',
+        'Anliegen:',
+        $values['message'],
+    ]);
+    try {
+        sendProjectEmail('Platinum Cars – ' . $requestLabel . ' #' . $requestId, $body);
+    } catch (Throwable $mailError) {
+        error_log('E-Mail-Versand fehlgeschlagen für Werkstattanfrage #' . $requestId);
+        $responseMessage .= ' Die E-Mail-Benachrichtigung konnte nicht gesendet werden.';
+    }
+    respond(201, ['id' => $requestId, 'message' => $responseMessage]);
 } catch (PDOException $error) {
+    // Closing the connection also releases an advisory lock after a database error.
+    $database = null;
     error_log($error->getMessage());
     respond(500, ['error' => 'Die Anfrage konnte nicht gespeichert werden. Kontakt ist telefonisch oder per E-Mail möglich.']);
 }

@@ -1,9 +1,16 @@
-# Vehicle image references
+# Vehicle image sources
 
-Downloaded 03.11.2026 for local project use; Pegah confirmed her brother's permission. Mapping from https://home.mobile.de/PLATINUMCARSSOLINGEN, which the reader reported as a cached page, not a live stock verification. Resized and encoded as WebP; image content unchanged.
+Dealer photos are used with the owner's permission for the local project demonstration. No vehicle image was generated or had its content altered. Photos were resized to at most 1440 pixels wide and encoded as WebP (quality 82).
 
-- audi-a3/01.webp: https://img.classistatic.de/api/v1/mo-prod/images/33/33ac5341-eaed-48a7-b305-d27f1d843f1a?rule=mo-1600 — Audi A3 Sportback 1,4 TFSI
-- mercedes-cla/01.webp: https://img.classistatic.de/api/v1/mo-prod/images/c0/c0c26cc6-d657-469e-baa2-aa5f9e55e18b?rule=mo-1600 — Mercedes-Benz CLA 180
-- ford-focus/01.webp: https://img.classistatic.de/api/v1/mo-prod/images/c8/c858b9c9-1e15-4fc7-9776-833e2ed367f2?rule=mo-1600 — Ford Focus Lim. Trend
+Verified gallery snapshots on 2026-11-06:
 
-Only one image per car has been downloaded so far. Additional gallery views must be verified against the same listing.
+| Folder | Images | Listing |
+| --- | ---: | --- |
+| audi-a3 | 18 | https://home.mobile.de/home/vip?customerId=45871878&id=42908845580704 |
+| mercedes-cla | 16 | https://wiveda.de/fahrzeug/5bd2c307-6764-4555-ad1b-ce3f11545331 |
+| ford-focus | 15 | https://home.mobile.de/home/vip?customerId=45871878&id=43794772220128 |
+| audi-a5 | 15 | https://home.mobile.de/home/vip?customerId=45871878&id=53191191733536 |
+
+The Mercedes listing is archived and marked unavailable. Its dealer, vehicle specifications and first photo match the original project snapshot. It is retained as demonstration content, not a verification of current stock. Original mobile.de listing: https://home.mobile.de/home/vip?customerId=45871878&id=52817473398784.
+
+The exact source URL for every photo and the imported specifications are recorded in `database/selected-vehicle-content.json`. Other vehicle folders retain their existing single-photo snapshots from https://home.mobile.de/PLATINUMCARSSOLINGEN.

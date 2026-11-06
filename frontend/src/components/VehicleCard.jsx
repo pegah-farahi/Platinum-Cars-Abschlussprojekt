@@ -192,8 +192,8 @@ function VehicleCard({
             {financingExample && (
               <p className="vehicle-financing-summary">
                 ab <strong>{financingExample.monthlyRate}</strong> mtl.{" "}
-                {id === 4 ? (
-                  <a href={audiA5FinancingUrl} target="_blank" rel="noopener noreferrer">
+                {financingExample.url || id === 4 ? (
+                  <a href={financingExample.url || audiA5FinancingUrl} target="_blank" rel="noopener noreferrer">
                     Finanzierung berechnen
                   </a>
                 ) : (

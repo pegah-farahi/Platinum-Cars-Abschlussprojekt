@@ -1,0 +1,545 @@
+{
+  "recordedOn": "2026-11-06",
+  "vehicles": [
+    {
+      "id": 1,
+      "brand": "Audi",
+      "model": "A3 Sportback",
+      "sourceUrl": "https://home.mobile.de/home/vip?customerId=45871878&id=42908845580704",
+      "priceEur": 12490,
+      "transmission": "Schaltgetriebe",
+      "exteriorColor": "Grau Metallic",
+      "description": "Audi A3 Sportback 1.4 TFSI in Monsungrau Metallic, Ausstattungslinie Ambition. Das Inserat nennt einen Vorbesitzer, 43.900 km, Scheckheftpflege und ein Nichtraucherfahrzeug. Zur Ausstattung gehören ein elektrisches Panorama-Ausstelldach, MMI Navigation Plus mit MMI Touch, das Bang & Olufsen Soundsystem und Xenonscheinwerfer. Die Hauptuntersuchung und Inspektion werden im Inserat als neu angegeben. Besichtigung nach vorheriger Terminabsprache; Inzahlungnahme und Finanzierung können persönlich angefragt werden.",
+      "equipment": [
+        "Abgedunkelte Scheiben",
+        "ABS",
+        "Adaptives Fahrwerk",
+        "Allwetterreifen",
+        "Ambiente-Beleuchtung",
+        "Armlehne",
+        "Bluetooth",
+        "Bordcomputer",
+        "Elektrische Fensterheber",
+        "Elektrische Außenspiegel",
+        "Anklappbare Außenspiegel",
+        "Elektronische Wegfahrsperre",
+        "ESP",
+        "Freisprecheinrichtung",
+        "Frontantrieb",
+        "Gepäckraumabtrennung",
+        "Geschwindigkeitsbegrenzer",
+        "Automatisch abblendender Innenspiegel",
+        "Inspektion neu laut Inserat",
+        "Isofix",
+        "Kurvenlicht",
+        "Lederlenkrad",
+        "LED-Tagfahrlicht",
+        "Leichtmetallfelgen",
+        "Lichtsensor",
+        "Multifunktionslenkrad",
+        "MMI Navigation Plus mit MMI Touch",
+        "Nebelscheinwerfer",
+        "Nichtraucher-Fahrzeug",
+        "Notbremsassistent",
+        "Pannenkit",
+        "Panorama-Dach",
+        "Regensensor",
+        "Reifendruckkontrolle",
+        "Scheckheftgepflegt",
+        "Scheinwerferreinigung",
+        "Schiebedach",
+        "Servolenkung",
+        "Bang & Olufsen Soundsystem",
+        "Sportfahrwerk",
+        "Sportpaket",
+        "Sportsitze",
+        "Sprachsteuerung",
+        "Start/Stopp-Automatik",
+        "Tempomat",
+        "Traktionskontrolle",
+        "Radio",
+        "USB",
+        "Xenonscheinwerfer",
+        "Zentralverriegelung"
+      ],
+      "technicalDetails": {
+        "Fahrzeugzustand": "Gebrauchtfahrzeug",
+        "Kategorie": "Kleinwagen",
+        "Baureihe": "8V",
+        "Ausstattungslinie": "Ambition",
+        "Herkunft": "Deutsche Ausführung",
+        "Hubraum": "1.395 cm³",
+        "Antriebsart": "Verbrennungsmotor",
+        "Verbrauch (kombiniert)": "5,3 l/100 km",
+        "CO₂-Emissionen (kombiniert)": "126 g/km",
+        "Sitzplätze": "5",
+        "Türen": "4/5",
+        "Schadstoffklasse": "Euro 5",
+        "Umweltplakette": "4 (Grün)",
+        "Fahrzeughalter": "1",
+        "HU": "Neu laut Inserat",
+        "Klimatisierung": "2-Zonen-Klimaautomatik",
+        "Airbags": "Front-, Seiten- und weitere Airbags",
+        "Herstellerfarbe": "Monsungrau",
+        "Innenausstattung": "Stoff, Schwarz",
+        "Anhängelast gebremst": "1.400 kg",
+        "Anhängelast ungebremst": "640 kg",
+        "Gewicht": "1.280 kg",
+        "Zylinder": "4",
+        "Tankgröße": "50 l"
+      },
+      "financingExample": {
+        "recordedOn": "06.11.2026",
+        "monthlyRate": "133 €",
+        "url": "https://www.mobile.de/finanzierung/route/outlink/1?adId=42908845580704&downPayment=2498&loanDuration=60&loanType=BALLOON&placement=dhp-vip-price-link&lang=de",
+        "terms": {
+          "Fahrzeugpreis im Beispiel": "12.490 €",
+          "Bank": "Openbank Deutschland AG",
+          "Darlehensvermittler": "CHECK24 GmbH",
+          "Anzahlung": "2.498,00 €",
+          "Schlussrate": "4.121,70 €",
+          "Nettodarlehensbetrag": "9.992,00 €",
+          "Fester Sollzins p.a.": "5,41 %",
+          "Effektiver Jahreszins": "5,55 %",
+          "Gesamtbetrag": "11.934,29 €",
+          "Laufzeit": "60 Monate"
+        }
+      },
+      "images": [
+        {
+          "path": "/images/vehicles/audi-a3/01.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/33/33ac5341-eaed-48a7-b305-d27f1d843f1a?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/02.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/1f/1f610efe-bd95-4b93-86c5-37f3d1cdc223?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/03.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/3d/3d6af728-f97d-4b6a-b04b-e2a6702125da?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/04.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/26/26456c13-b4a4-405c-9249-ba9a7ce014cd?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/05.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/ab/abae082b-ddb7-409b-92bc-890f085dc54c?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/06.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/69/69081120-1b82-4aae-894d-cc125c9c70f3?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/07.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/6e/6eb14c6b-0a63-4b48-bd5b-9019819a3623?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/08.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/d2/d235ec9f-0770-4d75-aba3-a2f6c363d6b6?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/09.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/72/727cbfee-7d80-4db5-991d-4514d592d2f6?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/10.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/f3/f359248d-0769-4ebe-8c38-dc31432aff0b?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/11.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/58/5823d3ca-6a77-4ab5-929a-f0907eca67de?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/12.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/27/274be06b-ca9e-4994-b677-cebf75c63b8a?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/13.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/2f/2f5adee8-9248-4013-b188-b221d5e93c05?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/14.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/d3/d313670b-1374-4d90-8319-565f8431b307?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/15.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/6a/6ad207d1-56fb-4329-be7e-f36fbde20438?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/16.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/19/191b28c7-6307-4d93-a9b9-fc91ea2b3a83?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/17.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/9e/9e7973c7-1f1a-4d00-92a8-94ef76887b82?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a3/18.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/91/9117dc0f-b968-429a-bb6f-d6c31a438975?rule=mo-1600"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "brand": "Mercedes-Benz",
+      "model": "CLA 180",
+      "sourceUrl": "https://wiveda.de/fahrzeug/5bd2c307-6764-4555-ad1b-ce3f11545331",
+      "originalSourceUrl": "https://home.mobile.de/home/vip?customerId=45871878&id=52817473398784",
+      "sourceStatus": "Archived listing, no longer available. Retained as project demonstration inventory.",
+      "priceEur": 11900,
+      "transmission": "Schaltgetriebe",
+      "exteriorColor": "Weiß",
+      "description": "Mercedes-Benz CLA 180 Urban in Weiß mit 1,6-Liter-Benzinmotor, 90 kW (122 PS) und Schaltgetriebe. Die archivierte Anzeige nennt 150.000 km, zwei Vorbesitzer, eine neue Inspektion sowie Sommer- und Winterreifen. Zu den genannten Ausstattungsmerkmalen gehören Bi-Xenon-Scheinwerfer, Rückfahrkamera und Sitzheizung. Im Innenraum werden schwarze Stoff-/Artico-Sitze und Sportsitze vorne beschrieben. Das Fahrzeug wird im Inserat als Nichtraucherfahrzeug bezeichnet. Besichtigung, Finanzierung und Inzahlungnahme nach persönlicher Absprache.",
+      "equipment": [
+        "ABS",
+        "Abgedunkelte Scheiben",
+        "Ambiente-Beleuchtung",
+        "Armlehne",
+        "Berganfahrassistent",
+        "Bi-Xenon-Scheinwerfer",
+        "Bluetooth",
+        "Bordcomputer",
+        "CD-Spieler",
+        "Elektrische Fensterheber",
+        "Elektrische Außenspiegel",
+        "Elektronische Wegfahrsperre",
+        "ESP",
+        "Geschwindigkeitsbegrenzer",
+        "Inspektion neu laut Inserat",
+        "Isofix",
+        "Kollisionswarnung",
+        "Lederlenkrad",
+        "LED-Tagfahrlicht",
+        "Leichtmetallfelgen",
+        "Lichtsensor",
+        "Müdigkeitswarner",
+        "Multifunktionslenkrad",
+        "Navigationsvorbereitung Becker MAP Pilot",
+        "Notbremsassistent",
+        "Pannenkit",
+        "Radio",
+        "Raucherpaket",
+        "Regensensor",
+        "Reifendruckkontrolle",
+        "Rückfahrkamera",
+        "Scheinwerferreinigung",
+        "Servolenkung",
+        "Sitzheizung",
+        "Sommerreifen",
+        "Sportpaket",
+        "Sportsitze",
+        "Sprachsteuerung",
+        "Start/Stopp-Automatik",
+        "Tempomat",
+        "Traktionskontrolle",
+        "USB",
+        "Winterreifen",
+        "Zentralverriegelung"
+      ],
+      "technicalDetails": {
+        "Fahrzeugzustand": "Gebrauchtfahrzeug",
+        "Kategorie": "Limousine",
+        "Ausstattungslinie": "Urban",
+        "Hubraum": "1.595 cm³",
+        "Antrieb": "Frontantrieb",
+        "Verbrauch (kombiniert)": "5,4 l/100 km",
+        "CO₂-Emissionen (kombiniert)": "128 g/km",
+        "Sitzplätze": "5",
+        "Fahrzeughalter": "2",
+        "HU": "Neu laut Inserat",
+        "Innenausstattung": "Stoff / Artico, Schwarz",
+        "Schadstoffklasse": "Euro 6",
+        "Umweltplakette": "4 (Grün)",
+        "Gewicht": "1.395 kg",
+        "Zylinder": "4",
+        "Tankgröße": "50 l"
+      },
+      "financingExample": null,
+      "images": [
+        {
+          "path": "/images/vehicles/mercedes-cla/01.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-1-87020506.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/02.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-2-e7b31a63.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/03.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-3-afae9512.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/04.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-4-bd89a54d.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/05.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-5-1cde4158.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/06.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-6-6e2ecf07.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/07.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-7-5518982c.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/08.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-8-6aeb0f1f.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/09.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-9-9080dcc2.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/10.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-10-9d9c7579.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/11.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-11-6ab40cfe.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/12.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-12-68a04b30.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/13.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-13-ae28e329.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/14.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-14-26e2c3d8.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/15.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-15-91514dab.jpg"
+        },
+        {
+          "path": "/images/vehicles/mercedes-cla/16.webp",
+          "sourceUrl": "https://wiveda-vehicle-images-production.s3.eu-central-1.amazonaws.com/vehicles/5bd2c307-6764-4555-ad1b-ce3f11545331/images/mercedes-benz-cla-180-2013-16-f02f925c.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "brand": "Ford",
+      "model": "Focus Trend",
+      "sourceUrl": "https://home.mobile.de/home/vip?customerId=45871878&id=43794772220128",
+      "priceEur": 9800,
+      "transmission": "Schaltgetriebe",
+      "exteriorColor": "Grau Metallic",
+      "description": "Ford Focus 1.0 EcoBoost Trend mit 74 kW (101 PS), Schaltgetriebe und 44.000 km. Das graue Fahrzeug hat laut Inserat zwei Vorbesitzer und eine schwarze Stoff-Innenausstattung. Genannt werden unter anderem eine feste Anhängerkupplung, Klimaanlage, Bluetooth, USB und ein Multifunktionslenkrad. Hauptuntersuchung, Abgasuntersuchung und Inspektion werden als neu angegeben. Das Inserat beschreibt das Fahrzeug als Nichtraucherfahrzeug. Besichtigung nach Terminabsprache; Informationen zu Finanzierung und Inzahlungnahme gibt es im persönlichen Gespräch.",
+      "equipment": [
+        "ABS",
+        "Allwetterreifen",
+        "Anhängerkupplung fest",
+        "Berganfahrassistent",
+        "Bluetooth",
+        "Bordcomputer",
+        "CD-Spieler",
+        "Elektrische Fensterheber",
+        "Elektrische Außenspiegel",
+        "Elektronische Wegfahrsperre",
+        "ESP",
+        "Freisprecheinrichtung",
+        "Frontantrieb",
+        "Gepäckraumabtrennung",
+        "Inspektion neu laut Inserat",
+        "Isofix",
+        "Lederlenkrad",
+        "Leichtmetallfelgen laut Ausstattungsliste",
+        "Multifunktionslenkrad",
+        "Nichtraucher-Fahrzeug",
+        "Notbremsassistent",
+        "Pannenkit",
+        "Reifendruckkontrolle",
+        "Schlüssellose Zentralverriegelung (Keyless)",
+        "Servolenkung",
+        "Sommerreifen",
+        "Sportpaket",
+        "Sprachsteuerung",
+        "Start/Stopp-Automatik",
+        "Tagfahrlicht",
+        "Traktionskontrolle",
+        "Radio",
+        "USB",
+        "Zentralverriegelung"
+      ],
+      "technicalDetails": {
+        "Fahrzeugzustand": "Gebrauchtfahrzeug",
+        "Kategorie": "Limousine",
+        "Baureihe": "DYB",
+        "Ausstattungslinie": "Trend",
+        "Herkunft": "Deutsche Ausführung",
+        "Hubraum": "998 cm³",
+        "Antriebsart": "Verbrennungsmotor",
+        "Verbrauch (kombiniert)": "4,6 l/100 km",
+        "CO₂-Emissionen (kombiniert)": "105 g/km",
+        "Sitzplätze": "5",
+        "Türen": "4/5",
+        "Schadstoffklasse": "Euro 6",
+        "Umweltplakette": "4 (Grün)",
+        "Fahrzeughalter": "2",
+        "HU": "Neu laut Inserat",
+        "Klimatisierung": "Klimaanlage",
+        "Airbags": "Front-, Seiten- und weitere Airbags",
+        "Innenausstattung": "Stoff, Schwarz",
+        "Anhängelast gebremst": "1.000 kg",
+        "Anhängelast ungebremst": "635 kg",
+        "Gewicht": "1.267 kg",
+        "Zylinder": "3",
+        "Tankgröße": "55 l"
+      },
+      "financingExample": {
+        "recordedOn": "06.11.2026",
+        "monthlyRate": "104 €",
+        "url": "https://www.mobile.de/finanzierung/route/outlink/1?adId=43794772220128&downPayment=1960&loanDuration=60&loanType=BALLOON&placement=dhp-vip-price-link&lang=de",
+        "terms": {
+          "Fahrzeugpreis im Beispiel": "9.800 €",
+          "Bank": "Openbank Deutschland AG",
+          "Darlehensvermittler": "CHECK24 GmbH",
+          "Anzahlung": "1.960,00 €",
+          "Schlussrate": "3.234,00 €",
+          "Nettodarlehensbetrag": "7.840,00 €",
+          "Fester Sollzins p.a.": "5,41 %",
+          "Effektiver Jahreszins": "5,55 %",
+          "Gesamtbetrag": "9.363,98 €",
+          "Laufzeit": "60 Monate"
+        }
+      },
+      "images": [
+        {
+          "path": "/images/vehicles/ford-focus/01.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/c8/c858b9c9-1e15-4fc7-9776-833e2ed367f2?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/02.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/ab/ab718011-77ab-4d4e-8b6c-3ad3d0636bde?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/03.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/cb/cbbb66a7-37a0-4cb8-8ecb-f1e98839e923?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/04.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/59/59867223-ba50-4943-9c2e-954879977963?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/05.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/f4/f43b87fa-8266-4021-857f-f5bb89fe392b?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/06.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/e1/e1671215-920e-440c-857e-690b9001d41c?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/07.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/00/00523198-8bb4-4a49-9d77-3518854f658c?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/08.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/78/788c9ae2-1f74-483b-8086-5008d9914633?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/09.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/5e/5ea4892f-75b9-4d2d-b541-a168833ff0c0?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/10.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/8a/8aa68635-2f88-479a-b13e-1ed936978a53?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/11.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/fd/fd5a1462-0594-4623-880d-327461a2ecc4?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/12.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/69/6951fc9b-b591-446d-89d7-56384c6870e2?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/13.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/3e/3e046cc4-55a9-4796-bd27-a714e0a28e55?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/14.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/9c/9c941857-dd92-47fc-b45f-2fcbdd203c6d?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/ford-focus/15.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/58/58ec82c6-b534-496b-97a2-45d937fcb41b?rule=mo-1600"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "brand": "Audi",
+      "model": "A5 Sportback 2.0 TFSI",
+      "sourceUrl": "https://home.mobile.de/home/vip?customerId=45871878&id=53191191733536",
+      "images": [
+        {
+          "path": "/images/vehicles/audi-a5/01.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/0e/0e085937-62f3-48f1-8ded-c2a1391a6a8a?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/02.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/22/22cf239c-9f87-4a50-a0f5-368b9cab598b?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/03.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/cf/cf833316-03e4-4266-817f-460e4e775fb0?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/04.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/ec/ec9ec1ef-9c5c-468f-bc76-ab6b714ddd7f?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/05.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/22/22640f03-9c4e-4f47-a135-42fe035b3ea7?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/06.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/38/3832153e-7e05-4ad3-a90a-0d9e7b45f6b7?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/07.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/01/018b9715-8687-4610-bc08-97ab23341113?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/08.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/5e/5ea1548f-567a-46b3-b3bd-0c520abf5a9f?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/09.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/33/333ee8c0-0013-48bf-8599-a18f5719980f?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/10.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/5d/5d8ebefa-d448-4f74-9b1a-e19ea7eec9ea?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/11.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/b6/b65518cc-8ee3-47eb-92d3-636b3c74d296?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/12.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/1c/1ce6bb70-947b-40c1-af94-cb7bdb8fae48?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/13.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/22/2222d9af-d6d3-400b-9829-197fb98aa59a?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/14.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/37/37562e29-09f5-43d2-9d31-09474f3f5a37?rule=mo-1600"
+        },
+        {
+          "path": "/images/vehicles/audi-a5/15.webp",
+          "sourceUrl": "https://img.classistatic.de/api/v1/mo-prod/images/05/057bcefd-87d9-424f-aef4-723bcfb73bf6?rule=mo-1600"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+DirectoryIndex index.html
+Options -Indexes
+
+RewriteEngine On
+
+# API requests must not return the React page.
+RewriteRule ^api(?:/|$) - [L]
+
+# Keep existing files and directories accessible.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Let React handle other page addresses.
+RewriteRule ^ index.html [L]

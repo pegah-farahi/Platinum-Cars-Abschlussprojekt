@@ -19,3 +19,10 @@ tmp/
 .DS_Store
 Thumbs.db
 /backend/vendor/
+
+# Private working notes are maintained outside this repository
+/DAILY-PLAN.md
+/DATA-FIELDS.md
+/PROJECT-NOTES.md
+/PROJECT-TIMELOG.md
+/design/images/*notes.md
